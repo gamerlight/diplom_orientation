@@ -24,8 +24,8 @@ set(PROJECT_SOURCES
         inputsettings.h
         inputsettings.cpp
         inputsettings.ui
-        inputdata.h
-        inputdata.cpp
+        virtualblockdevice.h
+        virtualblockdevice.cpp
         ${TS_FILES}
 )
 
