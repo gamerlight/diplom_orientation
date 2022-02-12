@@ -21,6 +21,11 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        inputsettings.h
+        inputsettings.cpp
+        inputsettings.ui
+        inputdata.h
+        inputdata.cpp
         ${TS_FILES}
 )
 
