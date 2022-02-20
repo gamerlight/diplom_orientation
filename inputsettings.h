@@ -14,9 +14,16 @@ class inputsettings : public QDialog
 public:
     explicit inputsettings(QWidget *parent = nullptr);
     ~inputsettings();
+    QString fileReader;
+    QString portNamestr;
+    bool inputMethod;
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_comboBox_currentIndexChanged(int index);
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::inputsettings *ui;

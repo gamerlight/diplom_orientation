@@ -14,13 +14,41 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="38"/>
+        <location filename="mainwindow.ui" line="39"/>
         <source>Параметры</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="43"/>
+        <location filename="mainwindow.ui" line="44"/>
         <source>Вспомогательные графики</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="49"/>
+        <source>Монитор вывода</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MonitorInput</name>
+    <message>
+        <location filename="monitorinput.ui" line="14"/>
+        <source>Монитор ввода</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="monitorinput.ui" line="34"/>
+        <source>Очистить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="monitorinput.ui" line="48"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="monitorinput.ui" line="41"/>
+        <source>Вкл/Выкл</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -57,8 +85,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="83"/>
+        <location filename="inputsettings.ui" line="87"/>
         <source>Порт ввода</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="inputsettings.ui" line="111"/>
+        <source>Выбор файла</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

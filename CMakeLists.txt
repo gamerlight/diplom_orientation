@@ -13,6 +13,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core SerialPort REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core SerialPort REQUIRED)
+
 
 set(TS_FILES Diplom_ru_RU.ts)
 
@@ -26,6 +29,13 @@ set(PROJECT_SOURCES
         inputsettings.ui
         virtualblockdevice.h
         virtualblockdevice.cpp
+        serialportmanager.h
+        serialportmanager.cpp
+        qserialio.h
+        qserialio.cpp
+        monitorinput.h
+        monitorinput.cpp
+        monitorinput.ui
         ${TS_FILES}
 )
 
@@ -57,6 +67,7 @@ else()
 endif()
 
 target_link_libraries(Diplom PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Diplom PRIVATE Qt${QT_VERSION_MAJOR}::SerialPort)
 
 set_target_properties(Diplom PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
