@@ -26,6 +26,8 @@ void MainWindow::on_action_triggered()
         }
         else
         {
+            delete serialReader;
+            delete serialManager;
             //TODO Добавить создание потока для файла
         }
     }

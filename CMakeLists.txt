@@ -36,6 +36,8 @@ set(PROJECT_SOURCES
         monitorinput.h
         monitorinput.cpp
         monitorinput.ui
+        stringtofloatmeasurements.h
+        stringtofloatmeasurements.cpp
         ${TS_FILES}
 )
 
