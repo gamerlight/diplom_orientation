@@ -31,7 +31,7 @@ void QSerialIO::handleError(QSerialPort::SerialPortError serialPortError)
     //msgBox.exec();
 }
 
-QString QSerialIO::get_datastring()
+QString QSerialIO::getDatastring()
 {
     return data_string;
 }

@@ -8,6 +8,7 @@
 #include "serialportmanager.h"
 #include "qserialio.h"
 #include "monitorinput.h"
+#include "stringtofloatmeasurements.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,9 +29,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    inputsettings input_settings;
     SerialPortManager *serialManager;
     QSerialIO *serialReader;
+    StringToFloatMeasurements *strToFloat;
+    inputsettings input_settings;
     MonitorInput monitor_input;
 };
 #endif // MAINWINDOW_H

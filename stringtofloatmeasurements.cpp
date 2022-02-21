@@ -1,14 +1,16 @@
 #include "stringtofloatmeasurements.h"
 
-StringToFloatMeasurements::StringToFloatMeasurements()
+StringToFloatMeasurements::StringToFloatMeasurements(QSerialIO *ptrr_serialReader)
 {
-
+    ptr_serialReader = ptrr_serialReader;
+    connect(ptr_serialReader, SIGNAL(signalStringReady()), this, SLOT(putString()));
 }
 
-void StringToFloatMeasurements::putString(QString input_string)
+void StringToFloatMeasurements::putString()
 {
-    string_data = input_string;
+    string_data = ptr_serialReader->getDatastring();
 }
+
 
 void StringToFloatMeasurements::convertStringtoFloats()
 {

@@ -14,9 +14,8 @@ class inputsettings : public QDialog
 public:
     explicit inputsettings(QWidget *parent = nullptr);
     ~inputsettings();
-    QString fileReader;
-    QString portNamestr;
-    bool inputMethod;
+    QString getPortNamestr();
+    bool getInputMethod();
 
 private slots:
     void on_pushButton_clicked();
@@ -27,6 +26,9 @@ private slots:
 
 private:
     Ui::inputsettings *ui;
+    QString fileReader;
+    QString portNamestr;
+    bool inputMethod;
 };
 
 #endif // INPUTSETTINGS_H

@@ -25,7 +25,7 @@ void MonitorInput::inputPtr(QSerialIO *ptrr_serialReader)
 
 void MonitorInput::input_TextEdit()
 {
-    ui->textEdit->append(ptr_serialReader->get_datastring());
+    ui->textEdit->append(ptr_serialReader->getDatastring());
 }
 
 void MonitorInput::on_pushButton_2_clicked()

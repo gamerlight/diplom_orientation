@@ -21,6 +21,16 @@ inputsettings::~inputsettings()
     delete ui;
 }
 
+QString inputsettings::getPortNamestr()
+{
+    return portNamestr;
+}
+
+bool inputsettings::getInputMethod()
+{
+    return inputMethod;
+}
+
 void inputsettings::on_pushButton_clicked()
 {
     portNamestr = ui->comboBox_2->currentText();

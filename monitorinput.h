@@ -25,7 +25,6 @@ private slots:
 
     void input_TextEdit();
 
-
     void on_pushButton_3_clicked();
 
 private:

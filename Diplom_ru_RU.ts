@@ -32,22 +32,22 @@
 <context>
     <name>MonitorInput</name>
     <message>
-        <location filename="monitorinput.ui" line="14"/>
+        <location filename="monitorinput.ui" line="20"/>
         <source>Монитор ввода</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="monitorinput.ui" line="34"/>
+        <location filename="monitorinput.ui" line="33"/>
         <source>Очистить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="monitorinput.ui" line="48"/>
+        <location filename="monitorinput.ui" line="47"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="monitorinput.ui" line="41"/>
+        <location filename="monitorinput.ui" line="40"/>
         <source>Вкл/Выкл</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55,42 +55,42 @@
 <context>
     <name>inputsettings</name>
     <message>
-        <location filename="inputsettings.ui" line="14"/>
+        <location filename="inputsettings.ui" line="32"/>
         <source>Параметры</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="26"/>
+        <location filename="inputsettings.ui" line="154"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="44"/>
+        <location filename="inputsettings.ui" line="55"/>
         <source>Способ ввода</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="52"/>
+        <location filename="inputsettings.ui" line="67"/>
         <source>В реальном времени с порта</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="57"/>
+        <location filename="inputsettings.ui" line="72"/>
         <source>Файл</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="69"/>
+        <location filename="inputsettings.ui" line="89"/>
         <source>Порт вывода</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="87"/>
+        <location filename="inputsettings.ui" line="116"/>
         <source>Порт ввода</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="inputsettings.ui" line="111"/>
+        <location filename="inputsettings.ui" line="143"/>
         <source>Выбор файла</source>
         <translation type="unfinished"></translation>
     </message>

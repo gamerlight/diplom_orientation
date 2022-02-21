@@ -9,7 +9,7 @@ class QSerialIO : public QObject
     Q_OBJECT
 public:
     explicit QSerialIO(QSerialPort *serialPort, QObject *parent = nullptr);
-    QString get_datastring();
+    QString getDatastring();
 
 signals:
     void signalStringReady();
@@ -19,7 +19,6 @@ public slots:
     void handleError(QSerialPort::SerialPortError serialPortError);
 
 private:
-    //QByteArray data;
     QString data_string;
     QByteArray data_array;
     QSerialPort *serialPort = nullptr;
