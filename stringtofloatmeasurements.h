@@ -13,12 +13,16 @@ class StringToFloatMeasurements : public QObject
     Q_OBJECT
 public:
     StringToFloatMeasurements(QSerialIO *ptrr_serialReader);
+    std::array<float, 6> getAccel_gyro();
+
+signals:
+    void signalArrayReady();
 
 private slots:
-    void convertStringtoFloats();
     void putString();
 
 private:
+    void convertStringtoFloats();
     QString string_data;
     std::array<float, 6> accel_gyro;
     QSerialIO *ptr_serialReader = nullptr;

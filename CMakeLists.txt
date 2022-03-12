@@ -15,6 +15,8 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core SerialPort REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core SerialPort REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Charts REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Charts REQUIRED)
 
 
 set(TS_FILES Diplom_ru_RU.ts)
@@ -38,6 +40,9 @@ set(PROJECT_SOURCES
         monitorinput.ui
         stringtofloatmeasurements.h
         stringtofloatmeasurements.cpp
+        plotmonitor.h
+        plotmonitor.cpp
+        plotmonitor.ui
         ${TS_FILES}
 )
 
@@ -70,6 +75,7 @@ endif()
 
 target_link_libraries(Diplom PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Diplom PRIVATE Qt${QT_VERSION_MAJOR}::SerialPort)
+target_link_libraries(Diplom PRIVATE Qt${QT_VERSION_MAJOR}::Charts)
 
 set_target_properties(Diplom PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

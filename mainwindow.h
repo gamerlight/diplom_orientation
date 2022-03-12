@@ -9,6 +9,7 @@
 #include "qserialio.h"
 #include "monitorinput.h"
 #include "stringtofloatmeasurements.h"
+#include "plotmonitor.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,6 +28,8 @@ private slots:
 
     void on_action_3_triggered();
 
+    void on_action_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     SerialPortManager *serialManager;
@@ -34,5 +37,6 @@ private:
     StringToFloatMeasurements *strToFloat;
     inputsettings input_settings;
     MonitorInput monitor_input;
+    plotMonitor plot_monitor;
 };
 #endif // MAINWINDOW_H

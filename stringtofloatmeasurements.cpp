@@ -6,9 +6,15 @@ StringToFloatMeasurements::StringToFloatMeasurements(QSerialIO *ptrr_serialReade
     connect(ptr_serialReader, SIGNAL(signalStringReady()), this, SLOT(putString()));
 }
 
+std::array<float, 6> StringToFloatMeasurements::getAccel_gyro()
+{
+    return accel_gyro;
+}
+
 void StringToFloatMeasurements::putString()
 {
     string_data = ptr_serialReader->getDatastring();
+    convertStringtoFloats();
 }
 
 
@@ -26,4 +32,5 @@ void StringToFloatMeasurements::convertStringtoFloats()
         string_data.remove(0, 1);
         accel_gyro[i] = buf.toFloat();
     }
+    emit signalArrayReady();
 }

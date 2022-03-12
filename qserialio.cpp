@@ -1,6 +1,7 @@
 #include "qserialio.h"
 
 #include <QMessageBox>
+#include <QtDebug>
 
 QSerialIO::QSerialIO(QSerialPort *serialPort, QObject *parent) :
     QObject(parent)
@@ -28,7 +29,11 @@ void QSerialIO::handleError(QSerialPort::SerialPortError serialPortError)
 {
     QMessageBox msgBox;
     msgBox.setText("Ошибка ввода/вывода");
-    //msgBox.exec();
+    if (serialPortError == QSerialPort::ReadError)
+    {
+        msgBox.exec();
+    }
+
 }
 
 QString QSerialIO::getDatastring()

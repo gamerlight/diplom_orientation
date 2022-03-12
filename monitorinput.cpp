@@ -6,6 +6,8 @@ MonitorInput::MonitorInput(QWidget *parent) :
     ui(new Ui::MonitorInput)
 {
     ui->setupUi(this);
+    ptr_serialReader = nullptr;
+    monitor_init = 0;
 }
 
 MonitorInput::~MonitorInput()
@@ -25,7 +27,9 @@ void MonitorInput::inputPtr(QSerialIO *ptrr_serialReader)
 
 void MonitorInput::input_TextEdit()
 {
-    ui->textEdit->append(ptr_serialReader->getDatastring());
+    QString data = ptr_serialReader->getDatastring();
+    data.remove(data.lastIndexOf("\r\n"), 2);
+    ui->textEdit->append(data);
 }
 
 void MonitorInput::on_pushButton_2_clicked()

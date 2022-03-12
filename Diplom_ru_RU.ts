@@ -32,22 +32,22 @@
 <context>
     <name>MonitorInput</name>
     <message>
-        <location filename="monitorinput.ui" line="20"/>
+        <location filename="monitorinput.ui" line="26"/>
         <source>Монитор ввода</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="monitorinput.ui" line="33"/>
+        <location filename="monitorinput.ui" line="39"/>
         <source>Очистить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="monitorinput.ui" line="47"/>
+        <location filename="monitorinput.ui" line="53"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="monitorinput.ui" line="40"/>
+        <location filename="monitorinput.ui" line="46"/>
         <source>Вкл/Выкл</source>
         <translation type="unfinished"></translation>
     </message>
@@ -92,6 +92,29 @@
     <message>
         <location filename="inputsettings.ui" line="143"/>
         <source>Выбор файла</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>plotMonitor</name>
+    <message>
+        <location filename="plotmonitor.ui" line="26"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="plotmonitor.ui" line="77"/>
+        <source>Очистить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="plotmonitor.ui" line="82"/>
+        <source>Вкл/выкл</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="plotmonitor.ui" line="87"/>
+        <source>Ок</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

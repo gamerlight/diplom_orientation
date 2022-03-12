@@ -29,8 +29,8 @@ private slots:
 
 private:
     Ui::MonitorInput *ui;
-    QSerialIO *ptr_serialReader = nullptr;
-    bool monitor_init = 0;
+    QSerialIO *ptr_serialReader;
+    bool monitor_init;
 };
 
 #endif // MONITORINPUT_H

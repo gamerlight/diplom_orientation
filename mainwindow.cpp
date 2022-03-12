@@ -24,6 +24,7 @@ void MainWindow::on_action_triggered()
             serialReader = new QSerialIO(serialManager->getSerialPort());
             strToFloat = new StringToFloatMeasurements(serialReader);
             monitor_input.inputPtr(serialReader);
+            plot_monitor.input_ptrStF(strToFloat);
         }
         else
         {
@@ -39,5 +40,11 @@ void MainWindow::on_action_triggered()
 void MainWindow::on_action_3_triggered()
 {
     monitor_input.show();
+}
+
+
+void MainWindow::on_action_2_triggered()
+{
+    plot_monitor.show();
 }
 

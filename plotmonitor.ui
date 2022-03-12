@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>plotMonitor</class>
+ <widget class="QDialog" name="plotMonitor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>968</width>
+    <height>442</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>968</width>
+    <height>442</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>968</width>
+    <height>442</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QSplitter" name="splitter_2">
+     <property name="minimumSize">
+      <size>
+       <width>846</width>
+       <height>420</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QChartView" name="graphicsView">
+      <property name="minimumSize">
+       <size>
+        <width>420</width>
+        <height>420</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>420</width>
+        <height>420</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QChartView" name="graphicsView_2">
+      <property name="minimumSize">
+       <size>
+        <width>420</width>
+        <height>420</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>420</width>
+        <height>420</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Очистить</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>Вкл/выкл</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>Ок</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>QtCharts</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

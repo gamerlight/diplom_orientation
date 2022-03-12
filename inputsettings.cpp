@@ -9,6 +9,7 @@ inputsettings::inputsettings(QWidget *parent) :
     ui(new Ui::inputsettings)
 {
     ui->setupUi(this);
+    inputMethod = 0;
     foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts())
     {
         ui->comboBox_2->addItem(info.portName());
