@@ -29,8 +29,6 @@ set(PROJECT_SOURCES
         inputsettings.h
         inputsettings.cpp
         inputsettings.ui
-        virtualblockdevice.h
-        virtualblockdevice.cpp
         serialportmanager.h
         serialportmanager.cpp
         qserialio.h
@@ -43,6 +41,8 @@ set(PROJECT_SOURCES
         plotmonitor.h
         plotmonitor.cpp
         plotmonitor.ui
+        navigationalgorithm.h
+        navigationalgorithm.cpp
         ${TS_FILES}
 )
 

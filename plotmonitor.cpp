@@ -92,31 +92,32 @@ void plotMonitor::on_pushButton_3_clicked()
 
 void plotMonitor::input_accelgyro()
 {
-    accel_gyro = ptr_StringtoFloat->getAccel_gyro();
+    accel = ptr_StringtoFloat->getAccel();
+    accel = ptr_StringtoFloat->getGyro();
     emit signalBufferReady();
 }
 
 void plotMonitor::draw_plot()
 {
-    X_accel->append(x, accel_gyro[0]);
-    Y_accel->append(x, accel_gyro[1]);
-    Z_accel->append(x, accel_gyro[2]);
-    X_gyro->append(x, accel_gyro[3]);
-    Y_gyro->append(x, accel_gyro[4]);
-    Z_gyro->append(x, accel_gyro[5]);
+    X_accel->append(x, accel[0]);
+    Y_accel->append(x, accel[1]);
+    Z_accel->append(x, accel[2]);
+    X_gyro->append(x, gyro[0]);
+    Y_gyro->append(x, gyro[1]);
+    Z_gyro->append(x, gyro[2]);
     for (int i = 0; i < 3; i++)
     {
-        if (fabs(accel_gyro[i])> y_1)
+        if (fabs(accel[i])> y_1)
         {
-            y_1 = accel_gyro[i];
+            y_1 = accel[i];
             ui->graphicsView->chart()->axisY()->setRange(-y_1, y_1);
         }
     }
-    for (int i = 3; i < 6; i++)
+    for (int i = 0; i < 3; i++)
     {
-        if (fabs(accel_gyro[i])> y_2)
+        if (fabs(gyro[i])> y_2)
         {
-            y_2 = accel_gyro[i];
+            y_2 = gyro[i];
             ui->graphicsView_2->chart()->axisY()->setRange(-y_2, y_2);
         }
     }

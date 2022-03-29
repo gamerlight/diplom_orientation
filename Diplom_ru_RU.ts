@@ -10,21 +10,96 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="29"/>
+        <source>Перемещение устройства</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="47"/>
+        <source>График времени на шаг</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="62"/>
+        <source>Режим</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="68"/>
+        <source>Однопоточный</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="73"/>
+        <source>Распараллеливание внутренних подзадач</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="78"/>
+        <source>Распараллеливание общих задач</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="83"/>
+        <source>Комбинированное распараллеливание</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="98"/>
+        <source>Широта</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="109"/>
+        <source>Долгота</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="120"/>
+        <source>Задать</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="128"/>
+        <source>Сбросить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="146"/>
+        <source>Старт</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="154"/>
+        <source>Стоп</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="160"/>
+        <source>Сбросить графики</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="170"/>
+        <source>Среднее время на шаг</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="196"/>
         <source>Меню</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="39"/>
+        <location filename="mainwindow.ui" line="206"/>
         <source>Параметры</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="44"/>
-        <source>Вспомогательные графики</source>
+        <location filename="mainwindow.ui" line="211"/>
+        <source>Вспомогательные графики вывода</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="49"/>
+        <location filename="mainwindow.ui" line="216"/>
         <source>Монитор вывода</source>
         <translation type="unfinished"></translation>
     </message>
@@ -99,7 +174,7 @@
     <name>plotMonitor</name>
     <message>
         <location filename="plotmonitor.ui" line="26"/>
-        <source>Dialog</source>
+        <source>Вспомогательные графики</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

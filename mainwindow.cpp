@@ -28,9 +28,12 @@ void MainWindow::on_action_triggered()
         }
         else
         {
-            delete serialReader;
-            delete serialManager;
-            delete strToFloat;
+            if (serialReader != nullptr)
+            {
+                delete serialReader;
+                delete serialManager;
+                delete strToFloat;
+            }
             //TODO Добавить создание потока для файла
         }
     }

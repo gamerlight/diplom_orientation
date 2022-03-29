@@ -45,7 +45,8 @@ private:
     Ui::plotMonitor *ui;
     StringToFloatMeasurements *ptr_StringtoFloat;
     bool monitor_init;
-    std::array<float, 6> accel_gyro;
+    std::array<float, 3> accel;
+    std::array<float, 3> gyro;
     QSplineSeries *X_accel;
     QSplineSeries *Y_accel;
     QSplineSeries *Z_accel;
