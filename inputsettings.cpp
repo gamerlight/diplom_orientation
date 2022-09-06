@@ -22,9 +22,19 @@ inputsettings::~inputsettings()
     delete ui;
 }
 
-QString inputsettings::getPortNamestr()
+QString inputsettings::getPortNamestr_read()
 {
-    return portNamestr;
+    return portNamestr_read;
+}
+
+QString inputsettings::getPortNamestr_write()
+{
+    return portNamestr_write;
+}
+
+QString inputsettings::getFileReader()
+{
+    return fileReader;
 }
 
 bool inputsettings::getInputMethod()
@@ -34,7 +44,8 @@ bool inputsettings::getInputMethod()
 
 void inputsettings::on_pushButton_clicked()
 {
-    portNamestr = ui->comboBox_2->currentText();
+    portNamestr_read = ui->comboBox_2->currentText();
+    portNamestr_write = ui->comboBox_3->currentText();
     this->accept();
 }
 

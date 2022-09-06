@@ -1,6 +1,11 @@
 #include "serialportmanager.h"
 #include <QMessageBox>
 
+SerialPortManager::SerialPortManager()
+{
+
+}
+
 SerialPortManager::SerialPortManager(QString portName,
                                      qint32 baud,
                                      QSerialPort::DataBits bits,
@@ -17,7 +22,7 @@ SerialPortManager::SerialPortManager(QString portName,
     this->serialPort->setParity(parity);
     this->serialPort->setFlowControl(flow);
 
-    bool result = this->serialPort->open(QIODevice::ReadOnly);
+    bool result = this->serialPort->open(QIODevice::ReadWrite);
 
     if (!result)
     {

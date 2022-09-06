@@ -7,8 +7,10 @@ plotMonitor::plotMonitor(QWidget *parent) :
 {
     connect(this, SIGNAL(signalBufferReady()), this, SLOT(draw_plot()));
     x = 0;
-    y_1 = 0;
-    y_2 = 0;
+    y_1 = 10;
+    y_2 = 5;
+    tick_y_1 = 0;
+    tick_y_2 = 0;
     ui->setupUi(this);
     ptr_StringtoFloat = nullptr;
     monitor_init = 0;
@@ -34,6 +36,10 @@ plotMonitor::plotMonitor(QWidget *parent) :
     ui->graphicsView_2->chart()->createDefaultAxes();
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     ui->graphicsView_2->setRenderHint(QPainter::Antialiasing);
+    ui->graphicsView->chart()->axisX()->setRange(0, 1000);
+    ui->graphicsView_2->chart()->axisX()->setRange(0, 1000);
+    ui->graphicsView->chart()->axisY()->setRange(-10, 10);
+    ui->graphicsView_2->chart()->axisY()->setRange(-5, 5);
 }
 
 plotMonitor::~plotMonitor()
@@ -61,12 +67,14 @@ void plotMonitor::on_pushButton_clicked()
     Y_gyro->clear();
     Z_gyro->clear();
     x = 0;
-    y_1 = 0;
-    y_2 = 0;
+    y_1 = 10;
+    y_2 = 5;
+    tick_y_1 = 0;
+    tick_y_2 = 0;
     ui->graphicsView->chart()->axisX()->setRange(0, 1000);
     ui->graphicsView_2->chart()->axisX()->setRange(0, 1000);
     ui->graphicsView->chart()->axisY()->setRange(-10, 10);
-    ui->graphicsView_2->chart()->axisY()->setRange(-10, 10);
+    ui->graphicsView_2->chart()->axisY()->setRange(-5, 5);
 }
 
 
@@ -80,7 +88,7 @@ void plotMonitor::on_pushButton_2_clicked()
     else
     {
         monitor_init = false;
-        disconnect(ptr_StringtoFloat, SIGNAL(signalArrayReady()), 0, 0);
+        disconnect(ptr_StringtoFloat, SIGNAL(signalArrayReady()), this, SLOT(input_accelgyro()));
     }
 }
 
@@ -93,7 +101,7 @@ void plotMonitor::on_pushButton_3_clicked()
 void plotMonitor::input_accelgyro()
 {
     accel = ptr_StringtoFloat->getAccel();
-    accel = ptr_StringtoFloat->getGyro();
+    gyro = ptr_StringtoFloat->getGyro();
     emit signalBufferReady();
 }
 
@@ -105,23 +113,27 @@ void plotMonitor::draw_plot()
     X_gyro->append(x, gyro[0]);
     Y_gyro->append(x, gyro[1]);
     Z_gyro->append(x, gyro[2]);
+    tick_y_1++;
     for (int i = 0; i < 3; i++)
     {
-        if (fabs(accel[i])> y_1)
+        if (fabs(accel[i])+1 >= y_1)
         {
-            y_1 = accel[i];
+            y_1 = fabs(accel[i])+1;
             ui->graphicsView->chart()->axisY()->setRange(-y_1, y_1);
+            tick_y_1 = 0;
         }
     }
+    tick_y_2++;
     for (int i = 0; i < 3; i++)
     {
-        if (fabs(gyro[i])> y_2)
+        if (fabs(gyro[i])+1 >= y_2)
         {
-            y_2 = gyro[i];
+            y_2 = fabs(gyro[i])+1;
             ui->graphicsView_2->chart()->axisY()->setRange(-y_2, y_2);
+            tick_y_2 = 0;
         }
     }
-    if (X_accel->count()>15)
+    if (X_accel->count()>20)
     {
         X_accel->remove(0);
         Y_accel->remove(0);
@@ -130,8 +142,20 @@ void plotMonitor::draw_plot()
         Y_gyro->remove(0);
         Z_gyro->remove(0);
     }
-    ui->graphicsView->chart()->axisX()->setRange(x-1000, x);
-    ui->graphicsView_2->chart()->axisX()->setRange(x-1000, x);
-    x += 100;
+    if (tick_y_1 > 10)
+    {
+        tick_y_1 = 0;
+        y_1 -= 1;
+        ui->graphicsView->chart()->axisY()->setRange(-y_1, y_1);
+    }
+    if (tick_y_2 > 10)
+    {
+        tick_y_2 = 0;
+        y_2 -= 1;
+        ui->graphicsView_2->chart()->axisY()->setRange(-y_2, y_2);
+    }
+    ui->graphicsView->chart()->axisX()->setRange(x-100, x);
+    ui->graphicsView_2->chart()->axisX()->setRange(x-100, x);
+    x += 5;
 }
 

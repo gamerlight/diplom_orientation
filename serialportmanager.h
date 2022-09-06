@@ -4,9 +4,11 @@
 #include <QtSerialPort/QSerialPort>
 
 
-class SerialPortManager
+class SerialPortManager : public QObject
 {
+    Q_OBJECT
 public:
+    SerialPortManager();
     SerialPortManager(QString portName,
                       qint32 baud = QSerialPort::Baud9600,
                       QSerialPort::DataBits bits = QSerialPort::Data8,

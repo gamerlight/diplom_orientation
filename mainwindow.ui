@@ -6,16 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>927</width>
-    <height>550</height>
+    <width>1028</width>
+    <height>628</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Система инерциальной навигации</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <widget class="QSplitter" name="splitter">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -29,11 +29,15 @@
          <string>Перемещение устройства</string>
         </property>
        </widget>
-       <widget class="QGraphicsView" name="graphicsView"/>
+       <widget class="ChartView" name="graphicsView">
+        <property name="dragMode">
+         <enum>QGraphicsView::NoDrag</enum>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
-    <item>
+    <item row="0" column="1">
      <widget class="QSplitter" name="splitter_13">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -47,134 +51,152 @@
          <string>График времени на шаг</string>
         </property>
        </widget>
-       <widget class="QGraphicsView" name="graphicsView_2"/>
+       <widget class="QChartView" name="graphicsView_2"/>
+      </widget>
+      <widget class="QSplitter" name="splitter_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Режим</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>Однопоточный</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Распараллеливание внутренних подзадач</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Распараллеливание общих задач</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Комбинированное распараллеливание</string>
+         </property>
+        </item>
+       </widget>
       </widget>
       <widget class="QSplitter" name="splitter_10">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-       <widget class="QSplitter" name="splitter_2">
+       <widget class="QSplitter" name="splitter_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Режим</string>
+          <string>Широта</string>
          </property>
         </widget>
-        <widget class="QComboBox" name="comboBox">
-         <item>
-          <property name="text">
-           <string>Однопоточный</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Распараллеливание внутренних подзадач</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Распараллеливание общих задач</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Комбинированное распараллеливание</string>
-          </property>
-         </item>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QSplitter" name="splitter_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Долгота</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_2">
+         <property name="text">
+          <string>0</string>
+         </property>
         </widget>
        </widget>
        <widget class="QSplitter" name="splitter_5">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Horizontal</enum>
         </property>
-        <widget class="QSplitter" name="splitter_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Широта</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit"/>
-        </widget>
-        <widget class="QSplitter" name="splitter_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Долгота</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_2"/>
-        </widget>
-        <widget class="QSplitter" name="splitter_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Задать</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Сбросить</string>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-       <widget class="QSplitter" name="splitter_8">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <widget class="QSplitter" name="splitter_7">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Старт</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Стоп</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>Сбросить графики</string>
+          <string>Курс</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_4">
+         <property name="text">
+          <string>0</string>
          </property>
         </widget>
        </widget>
-       <widget class="QSplitter" name="splitter_9">
+       <widget class="QSplitter" name="splitter_6">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Horizontal</enum>
         </property>
-        <widget class="QLabel" name="label_5">
+        <widget class="QPushButton" name="pushButton">
          <property name="text">
-          <string>Среднее время на шаг</string>
+          <string>Задать</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QPushButton" name="pushButton_2">
          <property name="enabled">
           <bool>false</bool>
          </property>
+         <property name="text">
+          <string>Сбросить</string>
+         </property>
         </widget>
+       </widget>
+      </widget>
+      <widget class="QSplitter" name="splitter_8">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QSplitter" name="splitter_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Старт</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Стоп</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>Сбросить графики</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QSplitter" name="splitter_9">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Среднее время на шаг в наносекундах</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -187,7 +209,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>927</width>
+     <width>1028</width>
      <height>26</height>
     </rect>
    </property>
@@ -199,7 +221,14 @@
     <addaction name="action_2"/>
     <addaction name="action_3"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Отладка</string>
+    </property>
+    <addaction name="action_C"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <action name="action">
    <property name="text">
@@ -216,7 +245,24 @@
     <string>Монитор вывода</string>
    </property>
   </action>
+  <action name="action_C">
+   <property name="text">
+    <string>Матрица C</string>
+   </property>
+  </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">QtCharts</header>
+  </customwidget>
+  <customwidget>
+   <class>ChartView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">chartview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -45,17 +45,19 @@ private:
     Ui::plotMonitor *ui;
     StringToFloatMeasurements *ptr_StringtoFloat;
     bool monitor_init;
-    std::array<float, 3> accel;
-    std::array<float, 3> gyro;
+    std::array<double, 3> accel;
+    std::array<double, 3> gyro;
     QSplineSeries *X_accel;
     QSplineSeries *Y_accel;
     QSplineSeries *Z_accel;
     QSplineSeries *X_gyro;
     QSplineSeries *Y_gyro;
     QSplineSeries *Z_gyro;
-    float x;
-    float y_1;
-    float y_2;
+    double x;
+    double y_1;
+    double y_2;
+    int tick_y_1;
+    int tick_y_2;
 };
 
 #endif // PLOTMONITOR_H

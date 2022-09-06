@@ -4,6 +4,7 @@
 #include <QDialog>
 
 #include "qserialio.h"
+#include "qfileio.h"
 
 namespace Ui {
 class MonitorInput;
@@ -17,6 +18,7 @@ public:
     explicit MonitorInput(QWidget *parent = nullptr);
     ~MonitorInput();
     void inputPtr(QSerialIO *ptrr_serialReader);
+    void inputPtr(QFileIO *ptrr_fileReader);
 
 private slots:
     void on_pushButton_clicked();
@@ -27,9 +29,12 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MonitorInput *ui;
-    QSerialIO *ptr_serialReader;
+    QSerialIO *ptr_serialReader = nullptr;
+    QFileIO *ptr_fileReader = nullptr;
     bool monitor_init;
 };
 

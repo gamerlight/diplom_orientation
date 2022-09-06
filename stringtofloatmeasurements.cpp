@@ -6,19 +6,28 @@ StringToFloatMeasurements::StringToFloatMeasurements(QSerialIO *ptrr_serialReade
     connect(ptr_serialReader, SIGNAL(signalStringReady()), this, SLOT(putString()));
 }
 
-std::array<float, 3> StringToFloatMeasurements::getAccel()
+StringToFloatMeasurements::StringToFloatMeasurements(QFileIO *ptrr_fileReader)
+{
+    ptr_fileReader = ptrr_fileReader;
+    connect(ptr_fileReader, SIGNAL(signalStringReady()), this, SLOT(putString()));
+}
+
+std::array<double, 3> StringToFloatMeasurements::getAccel()
 {
     return accel;
 }
 
-std::array<float, 3> StringToFloatMeasurements::getGyro()
+std::array<double, 3> StringToFloatMeasurements::getGyro()
 {
     return gyro;
 }
 
 void StringToFloatMeasurements::putString()
 {
-    string_data = ptr_serialReader->getDatastring();
+    if (ptr_serialReader != nullptr)
+        string_data = ptr_serialReader->getDatastring();
+    if (ptr_fileReader != nullptr)
+        string_data = ptr_fileReader->getDatastring();
     convertStringtoFloats();
 }
 
@@ -36,13 +45,19 @@ void StringToFloatMeasurements::convertStringtoFloats()
         string_data.remove(0, 1);
         if (i < 3)
         {
-            accel[i] = buf.toFloat();
+            accel[i] = buf.toDouble();
+            if ((accel[j] < 0.05)&&(accel[j] > -0.05))
+                accel[j] = 0;
         }
         else
         {
-            gyro[j] = buf.toFloat();
+            gyro[j] = buf.toDouble();
+            if ((gyro[j] < 0.05)&&(gyro[j] > -0.05))
+                gyro[j] = 0;
             j++;
         }
     }
     emit signalArrayReady();
+    emit signalAccelReady(accel);
+    emit signalGyroReady(gyro);
 }
